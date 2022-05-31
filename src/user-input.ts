@@ -62,9 +62,14 @@ export default class UserInputs {
     }
 
     static async translateText(source: StringLiteral, document: vscode.TextDocument) {
+        var title = `Translate '${source.value}'`;
+        // cut off title at 30 chars
+        if (title.length > 40) {
+            title = title.substring(0, 40) + '...';
+        }
         const translationKey = await vscode.window.showInputBox(
             {
-                title: 'Translation Key', ignoreFocusOut: false, prompt: `Enter Translation Key for ${source.value}`,
+                title: 'Translation Key', ignoreFocusOut: false, prompt: `Enter Translation Key for '${title}'`,
             }
         );
         if (translationKey === undefined) { return; }

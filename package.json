@@ -2,7 +2,7 @@
 	"name": "quick-i18n-gen",
 	"displayName": "quick-i18n-gen",
 	"description": "Extension to quickly create translation keys for string literals",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.67.0"
 	},

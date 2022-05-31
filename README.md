@@ -1,70 +1,60 @@
 # quick-i18n-gen README
 
-This is the README for your extension "quick-i18n-gen". After writing up a brief description, we recommend including the following sections.
+This Extension provides a quick way to translate and replace string literals in your code.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Tooltip in VSCode for quickly replacing string literals with a translation key
+- Quick and automatic translation of said string literals using a Translation API
+    - Currently supported APIs: **DeepL**
+- Automatically add translations with key to your translation file
+    - Currently supported file types: **CSV**
 
-For example if there is an image subfolder under your extension project workspace:
+Usage of the library would look like this
 
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+![How to use](images/quick_i18n_demo.gif)
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+You need an API key for Deepl, which is free up to a certain amount of translations.
+
+## Setup
+
+1. Set and register your API. Can be done via settings or via the `Register Translation API` command.
+
+![Register API](images/quick_i18n_demo.gif)
+
+2. Select the translation file. Can be done via settings or via the `Select Translation File` command.
+
+![Select File](images/quick_i18n_file.gif)
+
+3. Select the target languages. Currently, this can only be done through the settings
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+* `quick-i18n-gen.apiProvider`: API Provider to use for translation. Currently only Deepl available.
+    * `quick-i18n-gen.deepl.apiKey`: API Key for DeepL Translation API
+    * `quick-i18n-gen.deepl.sourceLanguage`: Source language for translation. If left empty, auto-detects the language of the text.
+    * `quick-i18n-gen.deepl.targetLanguages`: Target languages for translation. Translations will be written to the file in order specified here.
+* `quick-i18n-gen.translationFilePath`: Path to the translation file.
+* `quick-i18n-gen.translationFileType`: File type of the translation file. Currently only CSV supported.
+    * `quick-i18n-gen.csv.separator`: Separator for CSV file.
+    * `quick-i18n-gen.csv.quote`: Quote character for CSV file.
+    * `quick-i18n-gen.csv.escape`: Escape character for CSV file.
+    * `quick-i18n-gen.csv.header`: Whether CSV file has a header or not.
+* `quick-i18n-gen.allowDuplicates`: Whether to allow duplicate translations or not.
+* `quick-i18n-gen.replacementString`: String template to replace the string literal with.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
+Initial release
 
-### 1.0.1
+- [x] Added Deepl API
+- [x] Added CSV file type
+- [x] Added general settings
+- [x] Added translation file selection
+- [x] Added string code actions
 
-Fixed issue #.
 
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**

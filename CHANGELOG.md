@@ -1,9 +1,9 @@
 # Change Log
 
-All notable changes to the "quick-i18n-gen" extension will be documented in this file.
+## [1.0.0] Initial Release
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+- Added Deepl API
+- Added CSV file type
+- Added general settings
+- Added translation file selection
+- Added string code actions
