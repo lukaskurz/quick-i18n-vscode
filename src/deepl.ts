@@ -9,15 +9,19 @@ export default class DeeplApiManager {
         this.translator = new deepl.Translator(apiKey);
     }
 
-    public static async testApiKey(apiKey: string): Promise<boolean> {
+    public async testApiKey(): Promise<boolean> {
         try {
-            const translator = new deepl.Translator(apiKey);
-            const result = await translator.getSourceLanguages();
+            const result = await this.translator.getSourceLanguages();
             return true;
         } catch (error) {
             return false;
         }
     }
 
+    public async translate(text: string, sourceLanguage: deepl.SourceLanguageCode | null, targetLanguages: deepl.TargetLanguageCode[]): Promise<string[]> {
+        const results = await Promise.all(targetLanguages.map(async (targetLanguage) => this.translator.translateText(text, sourceLanguage, targetLanguage)));
+        const translatedTexts = results.map((result) => result.text);
 
+        return translatedTexts;
+    }
 }

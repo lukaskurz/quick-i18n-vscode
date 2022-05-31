@@ -31,13 +31,135 @@
 				"quick-i18n-gen.deepl.apiKey": {
 					"type": "string",
 					"description": "API Key for DeepL Translation API",
-					"default": "",
 					"markdownDescription": "You can get an API key [here](https://www.deepl.com/en/account.html#api_key)."
+				},
+				"quick-i18n-gen.deepl.sourceLanguage": {
+					"type": "string",
+					"description": "Source language for translation",
+					"default": "en",
+					"enum": [
+						"en",
+						"pt",
+						"bg",
+						"cs",
+						"da",
+						"de",
+						"el",
+						"es",
+						"et",
+						"fi",
+						"fr",
+						"hu",
+						"id",
+						"it",
+						"ja",
+						"lt",
+						"lv",
+						"nl",
+						"pl",
+						"ro",
+						"ru",
+						"sk",
+						"sl",
+						"sv",
+						"tr",
+						"zh"
+					],
+					"scope": "resource"
+				},
+				"quick-i18n-gen.deepl.targetLanguages": {
+					"type": "array",
+					"description": "Target languages for translation",
+					"items": {
+						"type": "string",
+						"enum": [
+							"en-GB",
+							"en-US",
+							"pt-BR",
+							"pt-PT",
+							"bg",
+							"cs",
+							"da",
+							"de",
+							"el",
+							"es",
+							"et",
+							"fi",
+							"fr",
+							"hu",
+							"id",
+							"it",
+							"ja",
+							"lt",
+							"lv",
+							"nl",
+							"pl",
+							"ro",
+							"ru",
+							"sk",
+							"sl",
+							"sv",
+							"tr",
+							"zh"
+						]
+					},
+					"scope": "resource"
 				},
 				"quick-i18n-gen.translationFilePath": {
 					"type": "string",
 					"description": "File path to the translation file",
 					"markdownDescription": "The file path should be relative to the workspace root.",
+					"scope": "resource"
+				},
+				"quick-i18n-gen.translationFileType": {
+					"type": "string",
+					"description": "File type of the translation file",
+					"default": "CSV",
+					"enum": [
+						"CSV"
+					],
+					"enumDescriptions": [
+						"Comma Separated Values"
+					]
+				},
+				"quick-i18n-gen.csv.separator": {
+					"type": "string",
+					"description": "separator for CSV file",
+					"default": ",",
+					"markdownDescription": "The separator should be a single character.",
+					"scope": "resource"
+				},
+				"quick-i18n-gen.csv.quote": {
+					"type": "string",
+					"description": "quote for CSV file",
+					"default": "\"",
+					"markdownDescription": "The quote should be a single character.",
+					"scope": "resource"
+				},
+				"quick-i18n-gen.csv.escape": {
+					"type": "string",
+					"description": "escape for CSV file",
+					"default": "\\",
+					"markdownDescription": "The escape should be a single character.",
+					"scope": "resource"
+				},
+				"quick-i18n-gen.csv.header": {
+					"type": "boolean",
+					"description": "Use header for CSV file",
+					"default": true,
+					"scope": "resource"
+				},
+				"quick-i18n-gen.allowDuplicates": {
+					"type": "boolean",
+					"description": "Allow duplicate translations in CSV file",
+					"default": true,
+					"scope": "resource"
+				},
+				"quick-i18n-gen.replacementString": {
+					"type": "string",
+					"description": "String that will replace the original string",
+					"default": "I18n.{token}",
+					"markdownDescription": "The replacement string should contain the token {token}.",
 					"scope": "resource"
 				}
 			}
