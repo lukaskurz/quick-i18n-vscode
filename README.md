@@ -12,7 +12,7 @@ This Extension provides a quick way to translate and replace string literals in 
 
 Usage of the library would look like this
 
-![How to use](images/quick_i18n_demo.gif)
+![How to use](https://github.com/lukaskurz/quick-i18n-vscode/blob/main/images/quick_i18n_demo.gif)
 
 ## Requirements
 
@@ -22,11 +22,11 @@ You need an API key for Deepl, which is free up to a certain amount of translati
 
 1. Set and register your API. Can be done via settings or via the `Register Translation API` command.
 
-![Register API](images/quick_i18n_demo.gif)
+![Register API](https://github.com/lukaskurz/quick-i18n-vscode/blob/main/images/quick_i18n_demo.gif)
 
 2. Select the translation file. Can be done via settings or via the `Select Translation File` command.
 
-![Select File](images/quick_i18n_file.gif)
+![Select File](https://github.com/lukaskurz/quick-i18n-vscode/blob/main/images/quick_i18n_file.gif)
 
 3. Select the target languages. Currently, this can only be done through the settings
 
