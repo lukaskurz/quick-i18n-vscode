@@ -8,9 +8,9 @@ export async function modifyDocument(range: Range, translationKey: string, docum
     const edit = new vscode.WorkspaceEdit();
 
     // check if file already has import statement, but only if an import statement is configured
-    if (importStatement !== undefined && checkIfDocumentHasImportStatement(document, importStatement)) {
+    if (importStatement !== undefined && !checkIfDocumentHasImportStatement(document, importStatement)) {
         // if it does add the import at the top of the file
-        edit.insert(document.uri, new vscode.Position(0, 0), importStatement);
+        edit.insert(document.uri, new vscode.Position(0, 0), importStatement + '\n');
     }
 
     // replace the source text with the translation key

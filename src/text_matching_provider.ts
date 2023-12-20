@@ -43,7 +43,7 @@ export class QuickFixTranslationProvider implements vscode.CodeActionProvider {
                 if (matchRange.contains(range)) {
                     // fits in selection -> only one possible match anyways
                     // cut off string literal quotes
-                    stringLiteral = { value: matchTextValue.slice(1, -1), range }
+                    stringLiteral = { value: matchTextValue.slice(1, -1), range: matchRange }
                     break;
                 }
             }
